@@ -11,7 +11,7 @@ int main() {
     int shift_n;
     string str, shifted;
 
-    cout << "文字列とシフト数を受け付けます。文字列は大文字英字のみ。シフトは右シフトのみで、1以上の自然数です。" << endl;
+    cout << "文字列とシフト数を受け付けます。文字列は大文字英字のみ。シフトは右シフトで、シフト数は正の整数のみ。" << endl;
     cout << "入力例: HOGEHOGE 15" << endl;
     cin >> str >> shift_n;
 
