@@ -43,6 +43,8 @@ string shift(string str, int shift_n) {
     int str_index[str.size()];
     string shifted; // シフト後の文字列
     const string map = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    //cout << "size: " << sizeof(str_index) << endl;
     
     // 文字列中の各文字をmapと対応させる。そのために、各文字のindexを取得して配列str_indexに入れる。
     for (int i = 0; i < str.size(); i++) {
@@ -56,11 +58,12 @@ string shift(string str, int shift_n) {
 
     // 各文字のシフトを行う。
     for (int i = 0; i < str.size(); i++) {
-        if (i + n < 26) {   // シフトがオーバーフローしない場合
+        if (str_index[i] + n < 26) {   // シフトがオーバーフローしない場合
             shifted += map[str_index[i] + n];
         } else {            // シフトがオーバーフローする場合
             shifted += map[(str_index[i] + n) - 26];
         }
+        //cout << "i: " << i << " " << "str: " << shifted << endl;
     }
 
     return shifted;
